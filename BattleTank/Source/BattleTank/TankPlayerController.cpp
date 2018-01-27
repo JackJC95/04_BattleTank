@@ -57,7 +57,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& HitLocation) const
 	return true;
 }
 
-
+//input returned look direction from below and line trace to return the hit location
 bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVector & HitLocation) const
 {
 	FHitResult HitResult;
@@ -77,6 +77,7 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 		return false;
 }
 
+// input screen location of crosshair from GetSightRayHitLocation and return the current look direction
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
 {
 	FVector CameraWorldLocation; // for discarding
