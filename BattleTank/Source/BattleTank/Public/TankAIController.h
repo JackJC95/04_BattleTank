@@ -26,4 +26,9 @@ protected:
 
 private:
 	virtual void Tick(float DeltaTime) override;
+
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
 };
