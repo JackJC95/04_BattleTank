@@ -20,6 +20,9 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
 private:
 
 	virtual void BeginPlay() override;
@@ -42,6 +45,8 @@ private:
 	float LineTraceRange = 1000000;
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
+
+	void SetPawn(APawn* InPawn);
 
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& HitLocation) const;
 };
